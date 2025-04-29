@@ -17,9 +17,12 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     port: 5173,
-    allowedHosts: true,
+    strictPort: true,
     hmr: {
-      overlay: false // Disables the error overlay if you only want console errors
+      clientPort: 443, // Для работы через HTTPS
+      host: 'preview--youth-subculture-website.poehali.dev', // Используем домен хоста
+      protocol: 'wss', // Безопасный WebSocket
+      overlay: false // Отключение оверлея ошибок
     }
   },
 });
