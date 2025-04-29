@@ -20,9 +20,10 @@ export default defineConfig({
     strictPort: true,
     hmr: {
       clientPort: 443, // Для работы через HTTPS
-      host: 'preview--youth-subculture-website.poehali.dev', // Используем домен хоста
-      protocol: 'wss', // Безопасный WebSocket
-      overlay: false // Отключение оверлея ошибок
+      path: '/ws', // Используем специфичный путь для WebSocket
+      timeout: 120000, // Увеличиваем таймаут
+      overlay: false, // Отключение оверлея ошибок
+      // Не указываем host, чтобы использовался текущий домен
     }
   },
 });
