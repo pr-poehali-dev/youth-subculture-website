@@ -19,11 +19,12 @@ export default defineConfig({
     port: 5173,
     strictPort: true,
     hmr: {
+      protocol: 'wss',
+      host: undefined, // Позволяет использовать текущий домен
       clientPort: 443, // Для работы через HTTPS
       path: '/ws', // Используем специфичный путь для WebSocket
       timeout: 120000, // Увеличиваем таймаут
       overlay: false, // Отключение оверлея ошибок
-      // Не указываем host, чтобы использовался текущий домен
     }
   },
 });
